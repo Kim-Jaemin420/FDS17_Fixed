@@ -6,12 +6,27 @@
   <title>웹카페 - 고정형 레이아웃</title> <!-- 웹카페 - HTML5, CSS3, 웹표준, 웹접근성 -->
 </head>
 <body>
-  <div>
-    <header>헤더</header>
-    <div>비주얼</div>
-    <main>메인 콘텐츠</main>
-    <article>슬로건</article>
-    <footer>푸터</footer>
-  </div>
+ <div class="container">
+   <header class="header">header</header>
+   <div class="visual">visual</div>
+   <main class="main">
+     <div class="group group1">group1</div>
+     <div class="group group2">group2</div>
+     <div class="group group3">group3</div>
+   </main>
+   <article class="slogan">slogan</article>
+   <div class="footer-bg">
+     <footer class="footer">footer</footer>
+   </div>
+
+   <!-- 1).container>header.header+div.visual(여기서 +는 형제)
+        2).container>header.header{헤더}=안에 텍스트도 포함
+        3).visual{비주얼}
+        4) article.slogan{slogan}
+        5) div.group.group${group$}*3
+  
+      --> 
+
+ </div>
 </body>
 </html>
