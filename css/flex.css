@@ -1,0 +1,32 @@
+.wrapper {
+  background-color: yellow;
+  border: 5px solid blue;
+  width: 50%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.wrapper div {
+  border: 1px solid red;
+  background-color: pink;
+  height: 50px;
+  flex-basis: 200px;
+}
+
+.box1 {
+  flex-grow: 1;
+}
+.box2 {
+  flex-grow: 2;
+}
+.box3 {
+  flex-grow: 3;
+  order: -1;
+}
+.box4 {
+  flex-grow: 1;
+  order: 1;
+}
+.box5 {
+  flex-grow: 3;
+}
