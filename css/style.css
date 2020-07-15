@@ -14,12 +14,17 @@ body {
   font-weight: 400;
 }
 /* 레이아웃 */
+
 .container {
   background-color: #ccc;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  
 }
 .header, .visual, .main, .slogan, .footer {
   width: 940px;
-  margin: 0 auto;
+  
 }
 .header {
   background-color: yellow;
@@ -31,19 +36,12 @@ body {
 /* 메인 콘텐츠 */
 .main {
   background-color: blue;
-  padding: 30px 15px;
-  /* overflow: hidden; */
   min-height: 450px;
-}
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: block;
-}
-.group {
-  float: left;
-  margin-left: 15px;
-  margin-right: 15px;
+  padding: 30px;
+  display: flex;
+  flex-flow:row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 .group1 {
   background-color: pink;
@@ -72,6 +70,10 @@ body {
 }
 .footer-bg {
   background-color: purple;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 .footer {
   background-color: skyblue;
