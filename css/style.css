@@ -54,7 +54,7 @@ a {
 /* 멤버링크 */
 .member {
   list-style: none;/*ul 앞에 점을 없애기 위해*/
-  padding-left: 0;
+  padding-left: 0;/*ul,li는 기본적으로 사방으로 여백을 가지고 있기 때문에 초기화해주는 작업을 해줌*/
   margin-top: 8px;
   margin-bottom: 8px;
   margin-right: -8px; /*English 뒤에 여백이 38px이 되는 것을 막기 위해 사용*/
