@@ -15,8 +15,9 @@ body {
 }
 /* 링크 스타일 */
 a {
-  text-decoration: none;
-  color: inherit;
+  text-decoration: none;/*밑줄을 없애기 위해서*/
+  color: inherit;/*모든 컬러는 다 상속가능하나, a태그는 상속받지 못하고 항상 파랑,보라의 색만 가진다. 
+  따라서 색을 변경할때 일일이 바꿔줘야하는 번거로움이 있기 때문에 inherit로 변경을 쉽게해주겠다*/
 }
 /* 레이아웃 */
 .container {
@@ -24,7 +25,6 @@ a {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  
 }
 .header, .visual, .main, .slogan, .footer {
   width: 940px;
@@ -46,16 +46,16 @@ a {
 }
 /* 멤버링크 */
 .member {
-  list-style: none;
+  list-style: none;/*ul 앞에 점을 없애기 위해*/
   padding-left: 0;
   margin-top: 8px;
   margin-bottom: 8px;
   margin-right: -8px;
   font-size: 0;  /*공백문자 제거를 위해 추가*/
-  text-align: right;
+  text-align: right;/*텍스트 정렬 방향을 설정*/
 }
 .member li, .member a {
-  display: inline-block;
+  display: inline-block;/*member를 오른쪽 정렬한 것처럼 보이게 하기위해(float,flex로도 해볼것)*/
 }
 .member li {
   font-size: 1.4rem;
@@ -64,8 +64,9 @@ a {
   /* margin: 0 5px; */
 }
 .member a {
-  text-transform: uppercase;
-  padding: 2px 8px 2px 3px;
+  text-transform: uppercase;/*모두 대문자로 변경*/
+  padding: 2px 8px 2px 3px;/*member의 글자 사이 공백을 추가하려고 패딩을 선택했다.
+  마진을 선택할수도 있으나 글자 선택 면적을 넓힌다면 클릭을 좀 더 쉽게 할 수 있기 때문에*/
 }
 .visual {
   background-color: lime;
