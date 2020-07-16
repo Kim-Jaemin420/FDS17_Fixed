@@ -13,6 +13,15 @@ body {
   font-family: 'Spoqa Han Sans';
   font-weight: 400;
 }
+/* 숨김 콘텐츠 */
+.a11y-hidden {
+  position: absolute;/*레이어함*/
+  width: 1px;
+  height: 1px;
+  overflow: hidden;/*넘치는 것 감추기*/
+  margin: -1px;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
 /* 링크 스타일 */
 a {
   text-decoration: none;/*밑줄을 없애기 위해서*/
@@ -28,7 +37,6 @@ a {
 }
 .header, .visual, .main, .slogan, .footer {
   width: 940px;
-  
 }
 /* 헤더 */
 .header {
@@ -36,13 +44,12 @@ a {
   border-radius: 0 0 15px 15px;
   padding: 0 30px 0 30px;
   position: relative;
-  
 }
 /* 로고 */
 .logo {
   position: absolute;
-  top: 45px;
-  left: 65px;
+  top: 25px;
+  left: 60px;
 }
 /* 멤버링크 */
 .member {
@@ -50,7 +57,7 @@ a {
   padding-left: 0;
   margin-top: 8px;
   margin-bottom: 8px;
-  margin-right: -8px;
+  margin-right: -8px; /*English 뒤에 여백이 38px이 되는 것을 막기 위해 사용*/
   font-size: 0;  /*공백문자 제거를 위해 추가*/
   text-align: right;/*텍스트 정렬 방향을 설정*/
 }
@@ -68,6 +75,40 @@ a {
   padding: 2px 8px 2px 3px;/*member의 글자 사이 공백을 추가하려고 패딩을 선택했다.
   마진을 선택할수도 있으나 글자 선택 면적을 넓힌다면 클릭을 좀 더 쉽게 할 수 있기 때문에*/
 }
+.menu {
+  background: #c95520 linear-gradient(to bottom, #ea7d2e 0%,#c95520 35%,#c95520 70%,#ea7d2e 100%); /*linear-gradient는 배경 이미지이므로 이미지를 지원하지 않을 수 있어 따로 배경색을 지정해준다.*/
+  padding-left: 0;
+  list-style: none;
+  margin: 0 0 50px;
+  padding-left: 225px;/*네비게이션 메뉴들을 로고옆에 두기 위해*/
+  border-top: 2px solid #000;
+  border-radius: 0 0 5px 5px;
+}
+.menu::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.menu-item {
+  float: left;
+}
+.btn-menu {
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border: 0;
+  border-left: 2px solid rgba(255, 255, 255, 0.85);
+  padding: 15px 20px;
+  cursor: pointer;
+  text-shadow: 1px 1px 0 #000;
+}
+.sub-menu {
+  background-color: pink;
+  position: absolute;
+  display: none;
+}
+/* 메인 메뉴 */
 .visual {
   background-color: lime;
   height: 120px;
@@ -84,28 +125,18 @@ a {
 }
 .group1 {
   background-color: pink;
-  
   width: 250px;
 }
 .group2 {
   background-color: lightgreen;
-  
   width: 380px;
 }
 .group3 {
   background-color: coral;
-  
   width: 190px;
-}
-.clearfix {
-  
-  
-  clear: both;
 }
 .slogan {
   background-color: orange;
-  
-  
 }
 .footer-bg {
   background-color: purple;
