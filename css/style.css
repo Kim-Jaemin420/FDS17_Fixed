@@ -1,5 +1,7 @@
 @import url(./normalize.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+/* @import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css); */
+@import url(./fontello.css);
 *, *::before, *::after {
   box-sizing:border-box;
 }
@@ -79,18 +81,15 @@ a {
   background: #c95520 linear-gradient(to bottom, #ea7d2e 0%,#c95520 35%,#c95520 70%,#ea7d2e 100%); /*linear-gradient는 배경 이미지이므로 이미지를 지원하지 않을 수 있어 따로 배경색을 지정해준다.*/
   padding-left: 0;
   list-style: none;
-  margin: 0 0 50px;
+  margin: 0 0 35px;
   padding-left: 225px;/*네비게이션 메뉴들을 로고옆에 두기 위해*/
   border-top: 2px solid #000;
   border-radius: 0 0 5px 5px;
-}
-.menu::after {
-  content: "";
-  display: block;
-  clear: both;
+  height: 50px;/* 늘어날 가능성이 없기 때문에 강제로 높이를 준다.*/
 }
 .menu-item {
   float: left;
+  position: relative;
 }
 .btn-menu {
   background-color: transparent;
@@ -99,13 +98,70 @@ a {
   font-weight: 700;
   border: 0;
   border-left: 2px solid rgba(255, 255, 255, 0.85);
-  padding: 15px 20px;
+  padding: 0/*15px였던 값을 nav구현 위해 삭제-왜냐하면 line-height는 padding 값을 포함해서 추가적으로 값을 더하기 때문에*/ 20px;
   cursor: pointer;
   text-shadow: 1px 1px 0 #000;
+  line-height: 48px;/*line-height값을 요소의 높이(패딩 마진 포함한값)만큼 줘서 박스가 그다음에 생성되게 했다.*/
+}
+.menu-act.btn-menu {
+  color: #ff0;
+  
+}
+.menu-act.btn-menu::after {
+  content: "";
+  display: block;
+  background-color: #000;
+  height: 2px; /*상자니까 높이를 부여해서 선두께처럼 구현*/
+  /*margin-top:15px; 얇은 박스를 버튼 밑으로 배치하려 했는데 버튼의 자식이라 버튼의 크기도 증가함*/
 }
 .sub-menu {
-  background-color: pink;
   position: absolute;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  white-space: nowrap;/*강제 개행 금지 인라인블럭을 하면 개행되는것을 막기 위한 팁*/
+
+}
+.sub-menu li, .sub-menu a{
+  display: inline-block;
+}
+.sub-menu a {
+  padding: 8px 0;
+  margin-right: 1em;/*한글자만큼*/
+}
+.sub-menu a::before {
+  content: '\f192';
+  font-family: 'fontello';
+  display: inline-block;
+  width: 1em;
+  margin-right: .2em;
+  margin-left: .2em;
+}
+.sub-menu a:hover::before, .sub-menu a:focus::before{
+  content: '\e800';
+}
+.sub-menu1,.sub-menu2,.sub-menu3 {
+  left: 0;
+}
+.sub-menu4,.sub-menu5,.sub-menu6 {
+  right: 0;/*l,r둘다 주면 width:100%와 같은 효과*/
+}
+.sub-menu1 {
+  display: block;
+}
+.sub-menu2 {
+  display: none;
+}
+.sub-menu3 {
+  display: none;
+}
+.sub-menu4 {
+  display: none;/*바깥으로 튀어나가지 않는 이유: submenu는 absoulte를 갖고있는 상황이므로 relative를 가진 요소를 찾아가다가 헤드에 있는 relatvie 만나고 그 헤드를 벗어나지 않는다.*/
+}
+.sub-menu5 {
+  display: none;
+}
+.sub-menu6 {
   display: none;
 }
 /* 메인 메뉴 */
