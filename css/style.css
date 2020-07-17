@@ -35,11 +35,6 @@ body {
   /* overflow: hidden; */
   min-height: 450px;
 }
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: block;
-}
 .group {
   float: left;
   margin-left: 15px;
@@ -61,8 +56,8 @@ body {
   width: 190px;
 }
 .clearfix {
-  
-  
+  content: "";
+  display: block;
   clear: both;
 }
 .slogan {
