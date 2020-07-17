@@ -1,6 +1,6 @@
 @import url(./normalize.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-/* @import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css); */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 @import url(./fontello.css);
 *, *::before, *::after {
   box-sizing:border-box;
@@ -11,7 +11,9 @@ html {
 body {
   font-size: 1.4rem; 
   color: #181818; 
-  background-color: #fff;
+  background: url(./images/bg_flower.png) no-repeat 50% 0 scroll/*그림이 나오려면 배경색 앞에 나와야한다.배경색은 마지막으로 가야한다 왜냐하면 백그라운드는 나중에 작성할수록 밑으로 가기 때문*/
+  ,#fff linear-gradient(to bottom, #ccc 0%, #fff 70%, #fff 100% );/*아래쪽 방향으로 그라디언트*/
+  /*비쥬얼의 이미지를 container에 줄수 있지만 너무 쉬우므로 바디에 주겠다.*/
   font-family: 'Spoqa Han Sans';
   font-weight: 400;
 }
@@ -32,7 +34,6 @@ a {
 }
 /* 레이아웃 */
 .container {
-  background-color: #ccc;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -83,7 +84,7 @@ a {
   list-style: none;
   margin: 0 0 35px;
   padding-left: 225px;/*네비게이션 메뉴들을 로고옆에 두기 위해*/
-  border-top: 2px solid #000;
+  border-top: 2px solid #000;/*border-top을 2px 줬기 때문에 바닥선이  menu안에 포함되지 않고 밖에 있는것처럼 보임*/
   border-radius: 0 0 5px 5px;
   height: 50px;/* 늘어날 가능성이 없기 때문에 강제로 높이를 준다.*/
 }
@@ -164,10 +165,57 @@ a {
 .sub-menu6 {
   display: none;
 }
-/* 메인 메뉴 */
+/* 비주얼 */
+@keyframes textAni {
+  0% {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.0);
+    transform: translate(0,0);
+  }
+  100% {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 1);
+    transform: translate(400px, 75px);
+  }
+}
+@keyframes bgAni {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .visual {
-  background-color: lime;
   height: 120px;
+  position: relative;
+}
+.visual::before, .visual::after {
+  animation: bgAni 2000ms ease-in infinite alternate;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+.visual::before {
+  background-image: url(./images/ani_flower_01.png)
+  , url(./images/ani_flower_02.png);/*단축속성으로 쓰면 안된다. 위의 repeat가 덮어씌워지기 때문*/
+  background-position: 0 -10px, 670px 0;
+}
+.visual::after {
+  background-image: url(./images/ani_flower_03.png)
+  , url(./images/ani_flower_04.png);/*단축속성으로 쓰면 안된다. 위의 repeat가 덮어씌워지기 때문*/
+  background-position: 300px 0, 800px 20px;
+  animation-delay: 1000ms;
+}
+.visual-text {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  animation: textAni 500ms ease-in-out forwards;
+  font-size: 2.4rem;
+  width: 500px;
 }
 /* 메인 콘텐츠 */
 .main {
