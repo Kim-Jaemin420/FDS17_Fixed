@@ -18,7 +18,7 @@ body {
   font-weight: 400;
 }
 /* 숨김 콘텐츠 */
-.a11y-hidden {
+.a11y-hidden, legend {
   position: absolute;/*레이어함*/
   width: 1px;
   height: 1px;
@@ -239,6 +239,99 @@ a {
   background-color: coral;
   width: 190px;
 }
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+/* 인 */
+.login {
+  border-radius: 5px;
+  background-image: radial-gradient(circle at right top, #ea7d2e, #c95520);/*모양 설정 원모양, 타원 모양*/
+  background-color: #c95520;
+  box-shadow: 5px 5px 0 0 #ccc;/*인자값의 의미 정도만 알아두기*/
+  padding: 10px;
+}
+.login-heading {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  color: #ff0;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.login-form {
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-top: 10px;
+  padding: 10px 10px 0 10px;
+}
+.login-form fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;/*초기상태로 추가해주는것이 좋음*/
+  position: relative;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #aaa;
+}
+.login-form div {
+  width: 150px;
+  margin-bottom: 5px;
+}
+.login-form label {
+  /*인라인상태라 width를 줄수 없어서 liline-block으로 변경*/
+  display: inline-block;
+  width: 55px;
+}
+.login-form input {
+  width: 90px;
+  height: 24px;
+  border: 1px solid #aaa;
+  padding: 1px 1px 1px .5em;/*답답하지 않은 인풋박스 구현*/
+}
+.btn-login {
+  width: 50px;
+  height: 52px;
+  border-radius: 3px;
+  border: 0;
+  padding: 5PX;/*버튼은 에이전트 스타일상 패딩을 가짐*/
+  color: #fff;
+  cursor: pointer;/*초기값으로 추가하면 좋을듯*/
+  background-color: #fff;
+  background-color: #c95520;
+  font-size: 1.3rem;/*글자가 도드라져 크게 보여 살짝 줄임*/
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.member-only {/*ul이라 기본 마진을 가짐*/
+  background-color: #fff;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+}
+.member-only li:first-child {
+  float: left;
+}
+.member-only li:last-child {
+  float: right;
+}
+.member-only a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.member-only a::before {
+  content: "\e803";
+  font-family: "fontello";
+  display: inline-block;
+  margin-right: .2em;/*fontello가 화면에 나오기위한 조건이다. fontello.css에서 복붙함*/
+  color: #c95520;
+}
+/* 슬로건 */
 .slogan {
   background-color: orange;
 }
