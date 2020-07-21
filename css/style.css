@@ -244,13 +244,14 @@ a {
   clear: both;
   display: block;
 }
-/* 인 */
+/* 로그인 */
 .login {
   border-radius: 5px;
   background-image: radial-gradient(circle at right top, #ea7d2e, #c95520);/*모양 설정 원모양, 타원 모양*/
   background-color: #c95520;
   box-shadow: 5px 5px 0 0 #ccc;/*인자값의 의미 정도만 알아두기*/
   padding: 10px;
+  width: calc(100% - 5px);/*box-shadow 때문에 레이아웃 가로 너비가 5px만큼 늘어남*/
 }
 .login-heading {
   margin-top: 0;
@@ -331,6 +332,37 @@ a {
   margin-right: .2em;/*fontello가 화면에 나오기위한 조건이다. fontello.css에서 복붙함*/
   color: #c95520;
 }
+/* 유효성 검사 배너 링크 */
+.validation-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+.validation-list a {
+  display: block;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  background-image: url(./images/validation_icon.png),linear-gradient(180deg, #ccc, #eee);
+  background-repeat: no-repeat, repeat; 
+  background-position: 15px 50%, 0 0;
+  background-color: #ccc;
+  /* line-height: 30px; list 크기 정하는 또다른 방법 */
+  padding: 8px 10px 8px 45px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #aaa;
+}
+.validation-list a:hover {
+  color: #f00;
+}
+/* .validation-list li::before {
+  content: url(./images/validation_icon.png);
+  padding-right: 5px;
+  
+} */
 /* 슬로건 */
 .slogan {
   background-color: orange;
