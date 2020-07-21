@@ -339,7 +339,6 @@ a {
   list-style: none;
   margin-top: 25px;
   margin-bottom: 0;
-  font-size: 1.5rem;
 }
 .validation-list a {
   display: block;
@@ -361,7 +360,7 @@ a {
 /* .validation-list li::before {
   content: url(./images/validation_icon.png);
   padding-right: 5px;
-  
+  display:inline-block;
 } */
 /* 슬로건 */
 .slogan {
