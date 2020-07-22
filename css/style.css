@@ -450,6 +450,62 @@ a {
   height: 24px;/*글자크기를 줄이면서 버튼 높이가 줄어서 고정값으로 설정*/
   padding: 0 10px;
   border: 0;
+}
+.board {
+
+}
+.notice {
+
+}
+.notice .tab-act {
+
+}
+.notice-heading a {
+ border: 1px solid #aaa;
+ border-radius: 5px;
+ font-weight: 400;
+ font-size: 1.6rem;
+}
+.notice-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  float: left;
+}
+.notice-list li > a {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.notice-list li::before{
+  content: "\f192";
+  font-family: 'fontello';
+  display: inline-block;
+  margin-right: .2em;
+}
+.notice-list time {
+  float: right;
+}
+.pds {
+
+}
+.pds .tab-act {
+
+}
+.pds-heading {
+
+}
+.pds-list {
+
+}
+.pds-list li::before {
+  content: "\f192";
+  font-family: 'fontello';
+  display: inline-block;
+  margin-right: .2em;
+}
+.pds-more {
 
 }
 /* 슬로건 */
