@@ -106,11 +106,11 @@ a {
   text-shadow: 1px 1px 0 #000;
   line-height: 48px;/*line-height값을 요소의 높이(패딩 마진 포함한값)만큼 줘서 박스가 그다음에 생성되게 했다.*/
 }
-.menu-act.btn-menu {
+.menu-act .btn-menu {
   color: #ff0;
   
 }
-.menu-act.btn-menu::after {
+.menu-act .btn-menu::after {
   content: "";
   display: block;
   background-color: #000;
@@ -123,7 +123,10 @@ a {
   padding-left: 0;
   list-style: none;
   white-space: nowrap;/*강제 개행 금지 인라인블럭을 하면 개행되는것을 막기 위한 팁*/
-
+  display: none;
+}
+.menu-act .sub-menu {
+  display: block;
 }
 .sub-menu li, .sub-menu a{
   display: inline-block;
@@ -149,7 +152,7 @@ a {
 .sub-menu4,.sub-menu5,.sub-menu6 {
   right: 0;/*l,r둘다 주면 width:100%와 같은 효과*/
 }
-.sub-menu1 {
+/* .sub-menu1 {
   display: block;
 }
 .sub-menu2 {
@@ -159,14 +162,14 @@ a {
   display: none;
 }
 .sub-menu4 {
-  display: none;/*바깥으로 튀어나가지 않는 이유: submenu는 absoulte를 갖고있는 상황이므로 relative를 가진 요소를 찾아가다가 헤드에 있는 relatvie 만나고 그 헤드를 벗어나지 않는다.*/
+  display: none;바깥으로 튀어나가지 않는 이유: submenu는 absoulte를 갖고있는 상황이므로 relative를 가진 요소를 찾아가다가 헤드에 있는 relatvie 만나고 그 헤드를 벗어나지 않는다.
 }
 .sub-menu5 {
   display: none;
 }
 .sub-menu6 {
   display: none;
-}
+} */
 /* 비주얼 */
 @keyframes textAni {
   0% {
@@ -453,17 +456,22 @@ a {
 }
 /* 공지사항 및 자료실 */
 .board {
-  background-color: pink;
   margin-top: 20px;
   position: relative;
-  min-height: 180px;
+  /* padding-top: 45px; */
 }
 .notice-heading, .pds-heading {
-  background-color: yellow;
-  float: left;
   margin: 0;
   font-size: 1.4rem;
   font-weight: 400;/*margin=0부터 font-weight;은 헤딩 에이전트 스타일 때문에 들어감*/
+  position: absolute;
+  top: 0;
+}
+.notice-heading {
+  left: 0;
+}
+.pds-heading {
+  left: 73px;
 }
 .tab {
   display: block;
@@ -483,6 +491,7 @@ a {
 .notice-more, 
 .pds-more {
   display: none;
+
 }
 .tab-act .notice-list,
 .tab-act .pds-list, 
@@ -492,17 +501,13 @@ a {
 }
 
 .notice-list, .pds-list {
-  background-color: silver;
   list-style: none;
   margin: 0;
   padding-left: 0;
-  position: absolute;
-  top: 45px;
-  left: 0;
-  width: 100%;
+  min-height: 130px;
+  padding-top: 45px;
 }
 .notice-list li, .pds-list li {
-  background-color: orange;
   margin-bottom: 10px;  
 }
 .notice-list li::after,
@@ -512,7 +517,6 @@ a {
   display: block;
 }
 .notice-list a, .pds-list a {
-  background-color: skyblue;
   float: left;
   width: 300px;
   text-overflow: ellipsis;
@@ -528,7 +532,6 @@ a {
   margin-right: .2em
 }
 .notice-list time, .pds-list time {
-  background-color: violet;
   float: right;
 }
 .notice-more, .pds-more {
@@ -541,6 +544,7 @@ a {
   color: hsla(110, 70%, 50%, 1);/*각도, 채도, 명도, 투명도*/
   /*이미 만들어진 컨텐츠라 content=""생략  */
 }
+
 /* 슬로건 */
 .slogan {
   background-color: orange;
