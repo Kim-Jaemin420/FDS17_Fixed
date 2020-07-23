@@ -451,62 +451,95 @@ a {
   padding: 0 10px;
   border: 0;
 }
+/* 공지사항 및 자료실 */
 .board {
+  background-color: pink;
+  margin-top: 20px;
+  position: relative;
+  min-height: 180px;
+}
+.notice-heading, .pds-heading {
+  background-color: yellow;
+  float: left;
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 400;/*margin=0부터 font-weight;은 헤딩 에이전트 스타일 때문에 들어감*/
+}
+.tab {
+  display: block;
+  color: #666;
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 0 0;
+  padding: 5px 10px;
+  background: #ccc linear-gradient(180deg, #ccc, #eee);
+}
+.tab-act .tab {
+  color: #c95520;
+  border-color: #c95520 #c95520 #fff #c95520;
+  background: #fff;
+}
+.notice-list, 
+.pds-list, 
+.notice-more, 
+.pds-more {
+  display: none;
+}
+.tab-act .notice-list,
+.tab-act .pds-list, 
+.tab-act .notice-more, 
+.tab-act .pds-more {
+  display: block !important;
+}
 
-}
-.notice {
-
-}
-.notice .tab-act {
-
-}
-.notice-heading a {
- border: 1px solid #aaa;
- border-radius: 5px;
- font-weight: 400;
- font-size: 1.6rem;
-}
-.notice-list {
+.notice-list, .pds-list {
+  background-color: silver;
   list-style: none;
   margin: 0;
   padding-left: 0;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+}
+.notice-list li, .pds-list li {
+  background-color: orange;
+  margin-bottom: 10px;  
+}
+.notice-list li::after,
+.pds-list li::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.notice-list a, .pds-list a {
+  background-color: skyblue;
   float: left;
-}
-.notice-list li > a {
-  width: 250px;
-  white-space: nowrap;
-  overflow: hidden;
+  width: 300px;
   text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
-.notice-list li::before{
+
+.notice-list a::before,
+.pds-list a::before {
   content: "\f192";
   font-family: 'fontello';
   display: inline-block;
-  margin-right: .2em;
+  margin-right: .2em
 }
-.notice-list time {
+.notice-list time, .pds-list time {
+  background-color: violet;
   float: right;
 }
-.pds {
-
+.notice-more, .pds-more {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
 }
-.pds .tab-act {
-
-}
-.pds-heading {
-
-}
-.pds-list {
-
-}
-.pds-list li::before {
-  content: "\f192";
-  font-family: 'fontello';
-  display: inline-block;
-  margin-right: .2em;
-}
-.pds-more {
-
+.icon-plus::before {
+  color: hsla(110, 70%, 50%, 1);/*각도, 채도, 명도, 투명도*/
+  /*이미 만들어진 컨텐츠라 content=""생략  */
 }
 /* 슬로건 */
 .slogan {
