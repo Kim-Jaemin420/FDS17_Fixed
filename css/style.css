@@ -25,6 +25,8 @@ body {
   overflow: hidden;/*넘치는 것 감추기*/
   margin: -1px;
   clip-path: polygon(0 0, 0 0, 0 0);
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
 }
 /* 링크 스타일 */
 a {
@@ -655,6 +657,7 @@ a {
   border: 0;
   padding: 0;
   cursor: pointer;
+  vertical-align: top;/*파이어 폭스에서는 버튼이 베이스라인에 정렬되므로 추가해줌*/
 }
 .btn-next {
   background-position: -35px 0;
