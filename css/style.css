@@ -453,7 +453,6 @@ a {
 }
 /* 공지사항 및 자료실 */
 .board {
-  background-color: pink;
   margin-top: 20px;
   position: relative;
   min-height: 180px;
@@ -574,10 +573,6 @@ a {
   margin: 0;
   font-size: 1.4rem;
 }
-.news-item-date {
-  
- 
-}
 .news-item-brief {
  line-height: 1.5;
 }
@@ -598,6 +593,126 @@ a {
   top: -8px;
   right: -8px;
 }
+/* 신규 이벤트 및 관련 사이트 */
+/* 배경 그라디언트 */
+.gradient-box {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+  background: #ccc linear-gradient(180deg, #ccc, #eee);
+}
+/* 신규 이벤트 */
+/* .btn-wrap {
+  background-color: yellow;
+  height: 18px;
+}
+.btn-prev, .btn-next.btn-wrap button으로 하면 우선순위 문제가 발생해 따로따로 정의해준다.문법에러 아니기 때문에 찾기 어려움 
+{
+  background: #ccc url(./images/back_forward.png) no-repeat;
+  width: 19px;
+  height: 100%;
+  border: 0;
+  overflow: hidden;
+  padding: 18px 0 0 0;
+  cursor: pointer;
+}
+.btn-next {
+  background-position: -35px 0;우선순위에 밀려 적용되지 않음 선택자 점수가 동등하거나 더 커야한다. 해결방법은 위의 배경속성을 개별속성으로 지정해준다.
+} */
+.event {
+  border-bottom: 1px solid #aaa;
+  position: relative;
+  background-color: yellow;
+}
+.event-heading {
+  font-size: 1.6rem;
+  margin: 0;
+}
+.event-heading span {
+  color: #c95520;
+}
+.event-thumbnail, .evnet-brief {
+  margin: 10px 0;
+}
+.event-thumbnail img {
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #999;
+}
+.evnet-brief em {
+  font-style: normal;
+}
+.btn-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: pink;
+}
+.btn-prev, .btn-next {
+  background-image: url(./images/back_forward.png);
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 18px;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.btn-next {
+  background-position: -35px 0;
+}
+/* .gradient-box {
+  background: #ccc linear-gradient(180deg, #ccc, #eee);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+}
+.event {
+  position: relative;
+}
+.event-heading {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.event-heading span {
+  color: #c95520;
+}
+.event-thumbnail {
+  text-align: center;
+  box-shadow: 1px 1px #000;
+}
+.event-brief::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #fff;
+  margin-top: 10px;
+}
+.btn-wrap {
+  
+}
+.btn-wrap button {
+  border: 0;
+  background-image: url(./images/back_forward.png);
+  background-repeat: no-repeat;
+  width: 55px;
+  height: 18px;
+  padding-top: 18px;
+  overflow: hidden;
+}
+.related {
+
+}
+.related-heading {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.related-heading span {
+  color: #c95520;
+}
+.related ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+} */
 /* 슬로건 */
 .slogan {
   background-color: orange;
